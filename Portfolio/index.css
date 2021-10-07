@@ -1,0 +1,463 @@
+/*
+index 이름의 css 파일
+*/
+
+/*reset*/
+* {margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub,
+sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+label, legend, table, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+button {height: 40px;}
+
+/*Hahmlet 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*Philosopher 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*프리텐다드 폰트*/
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/*DM Serif Text 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+/*Rozha One 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+
+
+body {
+    font-family: Pretendard, 
+    -apple-system, BlinkMacSystemFont, 
+    system-ui, Roboto, 
+    'Helvetica Neue', 'Segoe UI', 
+    'Apple SD Gothic Neo', 'Noto Sans KR', 
+    'Malgun Gothic', sans-serif;
+    margin:0; 
+    padding: 0; 
+    font-size:15px; 
+    color: #524e4b;
+    box-sizing: border-box;
+    background-color: #faf1e7;
+}
+
+
+/* 마우스 커서 변경해보기 */
+#cursor_box {
+    z-index: 999;
+    position: absolute; 
+    background: #000; 
+    width: 80px; 
+    height: 80px; 
+    opacity: 0.4; 
+    border-radius: 100%;
+}
+
+
+
+/* header */
+#header {
+    z-index: 900;
+    width:100%; 
+    height: 90px; 
+    line-height:90px;
+    position: fixed; 
+    top:0; 
+    background-color: #eee6dc;
+}
+#header .header_wrap {
+    max-width:1260px; /*padding 좌우값을 10씩 부여했기 때문에 1280-20*/
+    background-color:#eee6dc;
+    display: flex;
+    padding:0 10px;
+    flex-direction: row;
+    margin: 0 auto;
+}
+#header .header_wrap .logo {
+    justify-content: flex-start;
+}
+#header .header_wrap .logo a {
+    font-size:20px;
+}
+#header .header_wrap .gnb {
+    font-size: 20px; 
+    justify-content: flex-end;
+    margin-left: auto;
+}
+#header .header_wrap .gnb a {
+    margin-left:30px;
+}
+#header .header_wrap .gnb a:hover {
+    color: #d6a496;
+}
+
+
+
+/* 메인 컨테이너 설정 */
+.main_container {
+    background-color:#faf1e7;
+    max-width:1260px; 
+    padding: 0 10px;
+    margin:0 auto;
+    position: relative;
+    cursor:default;
+}
+.main_container .top_btn { 
+    position: absolute; 
+    z-index: 910;
+}
+
+
+
+.main_container .top_btn input {
+    position:fixed;
+    left: 90%; 
+    bottom: 10%;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 80%; 
+    color: #fff;
+    background-color: #49625a; 
+    border:none;
+}
+
+/*Top 버튼에 돌아가는 효과 주기 */
+.main_container .top_btn input{
+    animation: rotate_image 7s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image{
+	100% {
+    	transform: rotate(360deg);
+    }
+}
+
+
+.main_container .main_info {
+    padding:220px 0;
+}
+
+.main_container .main_info {
+    font-family:'Rozha One', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    font-size: 140px;
+    /*cursor:default;*/
+    /*cursor:url("https://cellainc-media.s3.amazonaws.com/static/img/spinner.gif"),default;*/
+}
+
+/* 마우스 오버 이벤트 주기 */
+.main_container .main_info:hover {
+    color: #d6a496;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+/* 스크롤시 부드럽게 나타나게 */
+.main_container .up-on-scroll {
+    transition: transform 0.7s, opacity 1s;
+}
+
+
+
+/* 
+메뉴명 (Featured Works, About, Contact) 설정
+    - 폰트 사이즈 
+    - 하단 마진값    
+*/
+.sub_title {
+    font-size:70px; 
+    margin-bottom: 50px;
+}
+
+
+/* Featured Works 영역 */
+.main_container .project_list {
+    width: 100%;
+    margin-bottom:180px;
+}
+.main_container .project_list .thumbnail { 
+    display: flex;
+    flex-direction: row;
+}
+.main_container .project_list .thumbnail .thumbnail_list {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.main_container .project_list .thumbnail figure {
+    position: relative;
+    display: flex;
+}
+
+/*
+.main_container .project_list .thumbnail figure:hover {
+    background-color: #ffffff;
+    opacity: 0.3;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+*/
+
+.main_container .project_list .thumbnail figure.thumbnail_img { 
+    width:200px;
+    height: 480px; 
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*배경색 변형 선언*/
+    /*transition-property: background-color;*/
+    /*변형 완료 1초*/
+    /*transition-duration: 1s;*/
+    /*빠른 시작 서서히 감속*/
+    /*transition-timing-function: ease-out;*/
+    color: #ffffff;
+    text-align: left;
+    font-size: 16px;
+}
+
+
+.main_container .project_list .thumbnail figure.thumbnail_img img {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 5;
+}
+
+/* 마우스 오버시 하얗게 
+.main_container .project_list .thumbnail figure.thumbnail_img img:hover {
+    background-color: #ffffff;
+    opacity: 0.3;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+*/
+
+.main_container .project_list .thumbnail figure.thumbnail_img figcaption {
+    position: absolute;
+    text-align: center;
+    /*top:200px;*/
+    width: 100%;
+    height: 280px;
+    top:0;
+    padding-top:200px;
+    /*z-index: 100;*/
+    color:black;
+    opacity: 0;
+}
+
+
+.main_container .project_list .thumbnail figure.thumbnail_img:hover figcaption {
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+
+/* About 영역 */
+.main_container .about {
+    width: 100%;
+    margin-bottom:180px;
+}
+.main_container .about .about_content {
+    display: flex;
+    flex-direction: row;    
+}
+.main_container .about .about_content p {
+    justify-content: end;
+    margin-left:auto;
+    max-width: 1040px;
+    padding-right: 10px;
+    font-size:20px;
+    margin-bottom: 50px;
+}
+.main_container .about .about_buttonarea {
+    display: flex;
+    flex-direction: row;
+}
+.main_container .about .about_buttonarea .about_button {
+    justify-content:flex-end;
+    margin-left:auto;
+    text-align: center;
+    max-width: 1040px;
+}
+
+.main_container .about .about_buttonarea .about_button a {
+    font-size: 30px;
+    background: transparent;
+    margin:0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.main_container .about .about_buttonarea .about_button a:hover {
+    color: #d6a496;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Contact 영역 */
+.main_container .contact {
+    width: 100%;
+    padding-bottom:180px;
+}
+.main_container .contact .contact_form{
+    display: flex;
+    flex-direction: row;
+}
+.main_container .contact .contact_form .form_box {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+/*Thankyou 메세지 정렬, 폰트 설정*/
+.main_container .contact .contact_form .form_box .thankyou_message {
+    text-align: center;
+}
+
+.main_container .contact .contact_form .form_box .thankyou_message h2 {
+    color: #928f8c;
+    font-size: 20px;
+    font-weight: 300;    
+}
+
+
+.main_container .contact .contact_form .form_box form .mail_area{
+    max-width: 100%;
+}
+
+
+.main_container .contact .contact_form .form_box form fieldset {
+    background-color: #faf1e7;
+    border:0px;
+    width: 1040px;
+}
+.main_container .contact .contact_form .form_box form fieldset.mail_space {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    /*max-width: 100%;*/
+    width: 100%;
+}
+.main_container .contact .contact_form .form_box form fieldset input {
+    min-height: 40px;
+    font-size:15px;
+    padding: 0 10px;
+    background-color: #eee6dc;
+    border: #c0bcb7 1px solid;
+}
+
+.main_container .contact .contact_form .form_box form fieldset input::placeholder {
+    color:#928f8c;
+}
+
+.main_container .contact .contact_form .form_box form fieldset input:focus {
+    outline: none;
+}
+
+.main_container .contact .contact_form .form_box form .text_area {
+    /*margin-bottom: 10px;*/
+    /*width: 1040px;*/
+    max-width:1040px;
+}
+
+.main_container .contact .contact_form .form_box form .text_area textarea {
+    font-size: 15px;
+    width: 1020px;
+    min-height: 300px;
+    padding-left: 10px;
+    padding-top: 10px;
+    resize: none;
+    font-family: Pretendard, 
+    -apple-system, BlinkMacSystemFont, 
+    system-ui, Roboto, 
+    'Helvetica Neue', 'Segoe UI', 
+    'Apple SD Gothic Neo', 'Noto Sans KR', 
+    'Malgun Gothic', sans-serif;
+    overflow-y: scroll; 
+    background-color: #eee6dc;
+    border: #c0bcb7 1px solid;   
+}
+
+.main_container .contact .contact_form .form_box form .text_area textarea::placeholder {
+    color:#928f8c;
+}
+
+.main_container .contact .contact_form .form_box form .text_area textarea:focus {
+    outline: none;
+}
+
+
+.main_container .contact .contact_form 
+.form_box form fieldset.mail_space button {
+    /*
+    font-size: 50px;
+    background-color: transparent;
+    border:0px;
+    margin-bottom: 50px;
+    */
+    font-size: 20px;
+    height: 40px;
+    color: #fff;
+    background-color: #49625a;
+    border:0px;
+    margin-bottom: 50px;
+}
+.main_container .contact .contact_form 
+.form_box form fieldset.mail_space button:hover {
+    color:#f8e6e1;
+    background-color: #6d817b;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#footer {
+    width: 100%;
+    bottom:0;
+    font-size:20px;
+    background-color: #355148;
+}
+#footer .footer_wrap {
+    max-width: 1260px;
+    padding:10px;
+    height: 200px;
+    background-color: #355148;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+}
+#footer .footer_wrap .footer-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+/*
+#footer .footer_wrap .footer-flex .footer-item1 {
+    justify-content: flex-start;
+}
+#footer .footer_wrap .footer-flex .footer-item2 {
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+#footer .footer_wrap .footer-flex .footer-item3 {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+*/

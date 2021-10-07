@@ -1,0 +1,10 @@
+
+
+.main_container .project_main {
+    height: 900px;
+}
+
+.main_container .project_main .prj_title {
+    padding: 220px 0;
+    font-size: 140px;
+}
